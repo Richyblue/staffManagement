@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGoogle, faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
-import AOS from 'aos';
+// import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { loginUser } from '../apiService';
 
 const Login = () => {
     
-    useEffect(() => {
-        AOS.init({ duration: 1000, once: true });
-    }, []);
+    // useEffect(() => {
+    //     AOS.init({ duration: 1000, once: true });
+    // }, []);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const toggleModal = () => setIsModalOpen(!isModalOpen);
@@ -31,15 +29,7 @@ const Login = () => {
             setAuth(true);
 
             // Check user status and redirect immediately
-            const { user } = data; // Assuming the response includes user details
-            if (user.is_deactivate === 1) {
-                navigate('/deactivation');
-                return; // Stop further execution
-            }
-            if (user.is_terminate === 1) {
-                navigate('/termination');
-                return; // Stop further execution
-            }
+            
 
             // Redirect to intended page or default to dashboard
             const intendedPath = localStorage.getItem('intendedPath') || '/';
@@ -55,7 +45,7 @@ const Login = () => {
     return (
         <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-xl mx-auto p-6 gap-6">
             {/* Left Section */}
-            <div data-aos="fade-up" className="flex flex-col items-center bg-my-color text-white rounded-xl p-6 lg:w-1/2">
+            <div  className="flex flex-col items-center bg-my-color text-white rounded-xl p-6 lg:w-1/2">
                 <h3 className="text-3xl lg:text-4xl font-bold mb-4 text-center">
                     Success starts here
                 </h3>
@@ -68,13 +58,13 @@ const Login = () => {
                 </ul>
                 <img
                     className="w-full max-w-xs lg:max-w-2xl mt-6 lg:mr-4"
-                    src="../images/login.png"
+                    src="../image/login.png"
                     alt="Ads"
                 />
             </div>
 
             {/* Right Section */}
-            <div data-aos="fade-up" data-aos-duration="2000" className="flex flex-col bg-white shadow-xl rounded-xl p-6 lg:w-1/2">
+            <div   className="flex flex-col bg-white shadow-xl rounded-xl p-6 lg:w-1/2">
                 <h4 className="text-2xl lg:text-3xl font-bold text-center mb-4">
                     Log in to your account
                 </h4>
@@ -84,14 +74,14 @@ const Login = () => {
                         Sign up here
                     </Link>
                 </p>
-                <button className="flex lg:mt-20 items-center justify-center shadow-md rounded-2xl bg-white text-gray-700 text-lg lg:text-xl font-semibold p-3 lg:w-96 mx-auto gap-3 border border-gray-300">
+                {/* <button className="flex lg:mt-20 items-center justify-center shadow-md rounded-2xl bg-white text-gray-700 text-lg lg:text-xl font-semibold p-3 lg:w-96 mx-auto gap-3 border border-gray-300">
                     <FontAwesomeIcon icon={faGoogle} className="text-blue-500" />
                     Continue with Google
                 </button>
                 <button className="flex lg:mt-10 mt-10 items-center justify-center shadow-md rounded-2xl bg-white text-gray-700 text-lg lg:text-xl font-semibold p-3 lg:w-96 mx-auto gap-3 border border-gray-300">
                     <FontAwesomeIcon icon={faFacebookSquare} className="text-blue-500" />
                     Continue with Facebook
-                </button>
+                </button> */}
                 <button
                     className="flex lg:mb-40 mb-24 lg:mt-10 mt-10 items-center justify-center shadow-md rounded-2xl bg-white text-gray-700 text-lg lg:text-xl font-semibold p-3 lg:w-96 mx-auto gap-3 border border-gray-300"
                     onClick={toggleModal}
