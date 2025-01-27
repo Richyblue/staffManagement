@@ -8,7 +8,7 @@ import Login from './auth/login';
 function App() {
   return (
     <Router>
-    <div className="App">
+    <div className="App bg-blue-800">
       <Routes>
       <Route path="/" element={<Login />} />
       </Routes>
