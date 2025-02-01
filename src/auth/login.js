@@ -68,12 +68,12 @@ const Login = () => {
                 <h4 className="text-2xl lg:text-3xl font-bold text-center mb-4">
                     Log in to your account
                 </h4>
-                <p className="text-center mb-6">
+                {/* <p className="text-center mb-6">
                     Don't have an account yet?{' '}
                     <Link to="/register" className="text-blue-800 font-semibold">
                         Sign up here
                     </Link>
-                </p>
+                </p> */}
                 {/* <button className="flex lg:mt-20 items-center justify-center shadow-md rounded-2xl bg-white text-gray-700 text-lg lg:text-xl font-semibold p-3 lg:w-96 mx-auto gap-3 border border-gray-300">
                     <FontAwesomeIcon icon={faGoogle} className="text-blue-500" />
                     Continue with Google
@@ -89,7 +89,7 @@ const Login = () => {
                     Continue with Username/Pass
                 </button>
 
-                <p className="ml-5">By joining, you agree to the  Terms of Service and to occasionally receive emails from us. Please read our Privacy Policy to learn how we use your personal data.</p>
+                
             </div>
 
             {/* Modal */}

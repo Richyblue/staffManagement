@@ -97,6 +97,8 @@ const BASE_URL = process.env.REACT_APP_BASE_URL;
          </Link>
          </div>
       )}
+
+<p className="ml-5">By joining, you agree to the  Terms of Service and to occasionally receive emails from us. Please read our Privacy Policy to learn how we use your personal data.</p>
     </div>
   );
 };
