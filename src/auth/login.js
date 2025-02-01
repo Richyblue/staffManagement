@@ -13,7 +13,7 @@ const Login = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const toggleModal = () => setIsModalOpen(!isModalOpen);
 
-    const [email, setEmail] = useState('');
+    const [username, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
     const navigate = useNavigate();
@@ -22,7 +22,7 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const data = await loginUser({ email, password });
+            const data = await loginUser({ username, password });
 
             // Store token and update auth state
             localStorage.setItem('token', data.token);
@@ -32,7 +32,7 @@ const Login = () => {
             
 
             // Redirect to intended page or default to dashboard
-            const intendedPath = localStorage.getItem('intendedPath') || '/';
+            const intendedPath = localStorage.getItem('intendedPath') || '/home';
             navigate(intendedPath);
 
             // Clear the intended path after navigation
@@ -43,19 +43,19 @@ const Login = () => {
     };
 
     return (
-        <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-xl mx-auto p-6 gap-6">
+        <div className="flex flex-col lg:flex-row items-cente justify-center max-w-screen-xl mx-auto p-6 gap-6">
             {/* Left Section */}
-            <div  className="flex flex-col items-center bg-my-color text-white rounded-xl p-6 lg:w-1/2">
+            <div  className="flex flex-col items-center bg-my-color bg-blue-800 text-white rounded-xl p-6 lg:w-1/2">
                 <h3 className="text-3xl lg:text-4xl font-bold mb-4 text-center">
                     Success starts here
                 </h3>
-                <ul className="text-lg lg:text-2xl font-semibold space-y-4 list-disc list-inside">
+                {/* <ul className="text-lg lg:text-2xl font-semibold space-y-4 list-disc list-inside">
                     <li>Over 700 categories</li>
                     <li>Quality work done faster</li>
                     <li>
                         Access to talent and <br /> businesses across the globe
                     </li>
-                </ul>
+                </ul> */}
                 <img
                     className="w-full max-w-xs lg:max-w-2xl mt-6 lg:mr-4"
                     src="../image/login.png"
@@ -89,7 +89,7 @@ const Login = () => {
                     Continue with Username/Pass
                 </button>
 
-                <p className="ml-5">By joining, you agree to the Eazzylyfe Terms of Service and to occasionally receive emails from us. Please read our Privacy Policy to learn how we use your personal data.</p>
+                <p className="ml-5">By joining, you agree to the  Terms of Service and to occasionally receive emails from us. Please read our Privacy Policy to learn how we use your personal data.</p>
             </div>
 
             {/* Modal */}
@@ -100,12 +100,12 @@ const Login = () => {
                         <form onSubmit={handleLogin}>
                             <div className="mb-4">
                                 <label htmlFor="username" className="block text-gray-700 font-medium mb-2">
-                                    Email
+                                    Username
                                 </label>
                                 <input
-                                    type="email"
+                                    type="text"
                                     id="username"
-                                    value={email}
+                                    value={username}
                                     className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-300"
                                     onChange={(e) => setEmail(e.target.value)}
                                     required
