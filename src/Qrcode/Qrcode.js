@@ -62,6 +62,7 @@ const QRCodeGenerator = () => {
                             onChange={(e) => setSize(e.target.value)}
                             className="mb-4"
                         />
+                                <label>Upload Logo</label>
                         <input type="file" onChange={handleLogoUpload} className="mb-4" />
                         <div className="relative bg-white p-4 shadow-lg">
                             <QRCode value={url} size={size} fgColor={color} includeMargin={true} />
