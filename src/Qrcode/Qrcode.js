@@ -39,16 +39,16 @@ const QRCodeGenerator = () => {
                     <Navmenu />
 
                     <div className="flex flex-col bg-white items-start p-6  min-h-screen">
-                        <h1 className="text-2xl font-bold mb-4">QR Code Generator {MAIN_URL}</h1>
+                        <h1 className="text-2xl font-bold mb-4">QR Code Generator</h1>
                         <select
                         className="border p-2 w-80 mb-4"
                         value={url}
                         onChange={(e) => setUrl(e.target.value)}
                         >
                             <option value="" key="">Select link</option>
-                            <option value={`${MAIN_URL}/start`}  key="">Staff form</option>
-                            <option value={`${MAIN_URL}/customer-form`}  key="">Customer form</option>
-                            <option value={`${MAIN_URL}/leave-form`}  key="">Leave form</option>
+                            <option value={`${MAIN_URL}start`}  key="">Staff form</option>
+                            <option value={`${MAIN_URL}customer-form`}  key="">Customer form</option>
+                            <option value={`${MAIN_URL}leave-form`}  key="">Leave form</option>
                         </select>
                         
                         <div className="mb-4">
