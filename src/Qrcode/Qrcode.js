@@ -35,7 +35,7 @@ const QRCodeGenerator = () => {
                 <div className="">
                     <AdminSidebar />
                 </div>
-                <div className="fle shadow-xl flex-col flex-1 overflow-y-auto">
+                <div className="fle shadow-xl flex-col flex-1 bg-white overflow-y-auto">
                     <Navmenu />
 
                     <div className="flex flex-col bg-white items-start p-6  min-h-screen">
@@ -54,6 +54,7 @@ const QRCodeGenerator = () => {
                         <div className="mb-4">
                             <SketchPicker color={color} onChange={(c) => setColor(c.hex)} />
                         </div>
+                            <label className="mt-4 p-2">Adjust Size</label>
                         <input
                             type="range"
                             min="100"
@@ -62,8 +63,10 @@ const QRCodeGenerator = () => {
                             onChange={(e) => setSize(e.target.value)}
                             className="mb-4"
                         />
+                                <div className="bg-white p-3 shadow-lg">
                                 <label>Upload Logo</label>
                         <input type="file" onChange={handleLogoUpload} className="mb-4" />
+                                </div>
                         <div className="relative bg-white p-4 shadow-lg">
                             <QRCode value={url} size={size} fgColor={color} includeMargin={true} />
                             {logo && (
