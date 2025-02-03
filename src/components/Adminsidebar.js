@@ -30,8 +30,7 @@ function AdminSidebar() {
       for: "datas-toggle",
       subitem: [
         { name: "All Datas", link: "/alldata" },
-        { name: "Suspended", link: "/suspended" },
-        { name: "Terminated", link: "/datas/terminated" },
+        
       ],
     },
     {
