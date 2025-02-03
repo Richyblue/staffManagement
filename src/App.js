@@ -24,6 +24,8 @@ import CustomerForm from './Qrcode/Customer';
 import LeaveForm from './Qrcode/Leaveform';
 import Staffcongrate from './Qrcode/Staffcongrate';
 import CheckEmail from './Qrcode/Startform';
+import Editexpenses from './pages/Editexpenses';
+import Editinventry from './pages/Editinventry';
 
 function App() {
   return (
@@ -51,6 +53,8 @@ function App() {
       <Route path='/leave-form' element={<ProtectedRoute><LeaveForm /></ProtectedRoute>}/>
       <Route path='/staff-success' element={<ProtectedRoute><Staffcongrate /></ProtectedRoute>}/>
       <Route path='/start' element={<ProtectedRoute><CheckEmail /></ProtectedRoute>}/>
+      <Route path='/editexpenses/:id' element={<ProtectedRoute><Editexpenses /></ProtectedRoute>}/>
+      <Route path='/editinventory/:id' element={<ProtectedRoute><Editinventry /></ProtectedRoute>}/>
       </Routes>
     </div>
     </Router>
