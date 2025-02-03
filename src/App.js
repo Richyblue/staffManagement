@@ -37,7 +37,7 @@ function App() {
       <Route path='/alldata' element={<ProtectedRoute><Datas /></ProtectedRoute>}/>
       <Route path='/suspended' element={<ProtectedRoute><Suspended /></ProtectedRoute>}/>
       <Route path='/inventory' element={<ProtectedRoute><Inventory /></ProtectedRoute>}/>
-      <Route path='/expensis' element={<ProtectedRoute><Expensis /></ProtectedRoute>}/>
+      <Route path='/expenses' element={<ProtectedRoute><Expensis /></ProtectedRoute>}/>
       <Route path='/customer' element={<ProtectedRoute><Customer /></ProtectedRoute>}/>
       <Route path='/files' element={<ProtectedRoute><Files /></ProtectedRoute>}/>
       <Route path='/leave' element={<ProtectedRoute><Leave /></ProtectedRoute>}/>
