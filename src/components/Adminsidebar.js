@@ -69,8 +69,8 @@ function AdminSidebar() {
       icon: faQrcode,
       for: "qr-toggle",
       subitem: [
-        { name: "Customers", link: "/customer-qr" },
-        { name: "Staff", link: "/staff-qr" },
+        { name: "Settings", link: "/qrcode" },
+  
       ],
     },
   ];
