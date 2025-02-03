@@ -25,6 +25,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Navmenu from '../components/Navmenu';
 import moment from "moment";
+import { Link } from 'react-router-dom';
 
 
 
@@ -463,13 +464,15 @@ const Inventory = () => {
                                                         Action
                                                     </Menu.Button>
                                                     <Menu.Items className="absolute right-0 mt-2 w-40 bg-white shadow-lg border rounded-md">
+                                                    <Link to={`/editinventory/${invent.id}`}>
                                                         <Menu.Item
-                                                        onClick={()=> toggleModalseUpdate (invent.id)}
+                                                        
                                                             as="button"
                                                             className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                                                         >
                                                             Edit
                                                         </Menu.Item>
+                                                        </Link>
                                                         <Menu.Item
                                                         onClick={()=> handleDelete(invent.id)}
                                                             as="button"
