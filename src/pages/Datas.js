@@ -754,7 +754,7 @@ const Datas = () => {
 
                             <div className=" mt-10">
                                 <h2 className="font-bold sm:text-2xl  bg-gray-500 text-white rounded-sm"><FontAwesomeIcon icon={faUserCircle} /> {selectedStaff.first_name} {selectedStaff.last_name}</h2>
-                                <h2 className="font-semibold">{selectedStaff.role} ({selectedStaff.language}) Brange</h2>
+                                <h2 className="font-semibold">{selectedStaff.role} ({selectedStaff.language}) Branch</h2>
                             </div>
                             <Link to={`/editp/${selectedStaff.id}`}>
                                 <button
