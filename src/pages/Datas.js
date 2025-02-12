@@ -612,6 +612,7 @@ const Datas = () => {
                                     <th className="border px-4 py-2 text-left">Email</th>
                                     <th className="border px-4 py-2 text-left">Phone</th>
                                     <th className="border px-4 py-2 text-left">Gender</th>
+                                 <th className="border px-4 py-2 text-left">Location</th>
                                     <th className="border px-4 py-2 text-left">Status</th>
                                     <th className="border px-4 py-2 text-left">Action</th>
                                 </tr>
@@ -625,6 +626,7 @@ const Datas = () => {
                                             <td className="border px-4 py-2">{staffs.email}</td>
                                             <td className="border px-4 py-2">{staffs.phone}</td>
                                             <td className="border px-4 py-2">{staffs.gender}</td>
+                                            <td className="border px-4 py-2">{staffs.language}</td>
                                             <td className="border px-4 py-2">
                                                 <button
                                                     onClick={() => toggleStatusModal(staffs.id)}
@@ -752,7 +754,7 @@ const Datas = () => {
 
                             <div className=" mt-10">
                                 <h2 className="font-bold sm:text-2xl  bg-gray-500 text-white rounded-sm"><FontAwesomeIcon icon={faUserCircle} /> {selectedStaff.first_name} {selectedStaff.last_name}</h2>
-                                <h2 className="font-semibold">{selectedStaff.role}</h2>
+                                <h2 className="font-semibold">{selectedStaff.role} ({selectedStaff.language}) Brange</h2>
                             </div>
                             <Link to={`/editp/${selectedStaff.id}`}>
                                 <button
@@ -1155,18 +1157,23 @@ const Datas = () => {
                                     />
                                 </div>
 
+                                
                                 <div>
-                                    <label className="block mb-2 font-semibold">Language</label>
+                                    <label className="block mb-2 font-semibold">Office Location</label>
 
-                                    <input
-                                        type="text"
-                                        placeholder="language"
+                                    <select
                                         className="block w-full border border-gray-300 p-2"
                                         value={formData.language}
                                         onChange={(e) => handleInputChange("language", e.target.value)}
-                                        required
-                                    />
+                                        required>
+
+                                        <option value="" key="">Select office location</option>
+                                        <option value="Lekki" key="">Lekki</option>
+                                        <option value="VGC" key="">VGC</option>
+                                        <option value="Surulere" key="">Surulere</option>
+                                    </select>
                                 </div>
+
 
                                 <div>
                                     <label className="block mb-2 font-semibold">Role/Position</label>
