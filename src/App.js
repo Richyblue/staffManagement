@@ -47,12 +47,12 @@ function App() {
       <Route path='/editfriend/:id' element={<ProtectedRoute><Editfriend /></ProtectedRoute>}/>
       <Route path='/editbank/:id' element={<ProtectedRoute><Editbank /></ProtectedRoute>}/>
       <Route path='/qrcode' element={<ProtectedRoute><QRCodeGenerator /></ProtectedRoute>}/>
-      <Route path='/staff-form' element={<ProtectedRoute><Staff /></ProtectedRoute>}/>
-      <Route path='/staff-form-next/:staffId' element={<ProtectedRoute><Nextstaff /></ProtectedRoute>}/>
-      <Route path='/customer-form' element={<ProtectedRoute><CustomerForm /></ProtectedRoute>}/>
-      <Route path='/leave-form' element={<ProtectedRoute><LeaveForm /></ProtectedRoute>}/>
-      <Route path='/staff-success' element={<ProtectedRoute><Staffcongrate /></ProtectedRoute>}/>
-      <Route path='/start' element={<ProtectedRoute><CheckEmail /></ProtectedRoute>}/>
+      <Route path='/staff-form' element={<Staff />}/>
+      <Route path='/staff-form-next/:staffId' element={<Nextstaff />}/>
+      <Route path='/customer-form' element={<CustomerForm />}/>
+      <Route path='/leave-form' element={<LeaveForm />}/>
+      <Route path='/staff-success' element={<Staffcongrate />}/>
+      <Route path='/start' element={<CheckEmail />}/>
       <Route path='/editexpenses/:id' element={<ProtectedRoute><Editexpenses /></ProtectedRoute>}/>
       <Route path='/editinventory/:id' element={<ProtectedRoute><Editinventry /></ProtectedRoute>}/>
       </Routes>
