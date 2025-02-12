@@ -275,18 +275,22 @@ const Staff = () => {
                                     />
                                 </div>
 
-                                <div>
-                                    <label className="block mb-2 font-semibold">Language</label>
+                                            <div>
+                                    <label className="block mb-2 font-semibold">Office Location</label>
 
-                                    <input
-                                        type="text"
-                                        placeholder="language"
+                                    <select
                                         className="block w-full border border-gray-300 p-2"
                                         value={formData.language}
                                         onChange={(e) => handleInputChange("language", e.target.value)}
-                                        required
-                                    />
+                                        required>
+
+                                        <option value="" key="">Select office location</option>
+                                        <option value="Lekki" key="">Lekki</option>
+                                        <option value="VGC" key="">VGC</option>
+                                        <option value="Surulere" key="">Surulere</option>
+                                    </select>
                                 </div>
+
 
                                 <div>
                                     <label className="block mb-2 font-semibold">Role/Position</label>
