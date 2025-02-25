@@ -273,9 +273,15 @@ const Editpersonal = () => {
                                 required
                             >
                                 <option value="">Select</option>
-                                <option value="Admin">Admin</option>
-                                <option value="Manager">Manager</option>
-                                <option value="Barber">Barber</option>
+                                <option value="Admin" key="">Admin</option>
+                                        <option value="Manager" key="">Manager</option>
+                                        <option value="Barber" key="">Barbers</option>
+                                            <option value="Pedicurist" key="">Pedicurist</option>
+                                            <option value="Stylist" key="">Stylist</option>
+                                            <option value="Cashier" key="">Cashier</option>
+                                            <option value="Nail technician" key="">Nail technician</option>
+                                            <option value="Logtrician" key="">Logtrician</option>
+                                    
                             </select>
                         </div>
                         {/* Submit Button */}
