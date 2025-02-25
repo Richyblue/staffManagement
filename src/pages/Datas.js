@@ -776,7 +776,7 @@ const Datas = () => {
                                 <h2 className="text-left">{selectedStaff.gender}</h2>
                                 <h2 className="font-bold sm:text-lg text-left"> <FontAwesomeIcon icon={faPeopleArrows} /> Marital Status</h2>
                                 <h2 className="text-left">{selectedStaff.marital_status}</h2>
-                                <h2 className="font-bold sm:text-lg text-left"> <FontAwesomeIcon icon={faLanguage} /> Language</h2>
+                                <h2 className="font-bold sm:text-lg text-left"> <FontAwesomeIcon icon={faLanguage} /> Office Location</h2>
                                 <h2 className="text-left">{selectedStaff.language}</h2>
                                 <h2 className="font-bold sm:text-lg text-left"> <FontAwesomeIcon icon={faCalendarAlt} /> Date of Birth</h2>
                                 <h2 className="text-left">{formatDate(selectedStaff.dob)}</h2>
