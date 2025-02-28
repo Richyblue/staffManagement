@@ -467,6 +467,9 @@ const Datas = () => {
             );
             setSubmissionStatus({ success: true, message: response.data.message });
             localStorage.removeItem("formData");
+            setFormData({ medical_address: "", medical_email: "",
+            medical_number: "", medical_name: "" });
+                
 
         } catch (error) {
             setSubmissionStatus({
@@ -521,6 +524,9 @@ const Datas = () => {
             );
             setSubmissionStatus({ success: true, message: response.data.message });
             localStorage.removeItem("formData");
+            setFormData({parent_email: "",
+            parent_address: "", parent_name: "", parent_number: " });
+
 
         } catch (error) {
             setSubmissionStatus({
