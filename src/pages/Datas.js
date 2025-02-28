@@ -195,6 +195,11 @@ const Datas = () => {
 
             setSubmissionStatus({ success: true, message: response.data.message });
             localStorage.removeItem("formData");
+            setFormData({ first_name: "",last_name: "", email: "",
+            phone: "", country: "", state: "", city: "",
+            address: "", gender: "", marital_status: "",
+            bvn: "", language: "", role: "" });
+  
 
         } catch (error) {
             setSubmissionStatus({
