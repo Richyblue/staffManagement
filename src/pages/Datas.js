@@ -198,7 +198,8 @@ const Datas = () => {
             setFormData({ first_name: "",last_name: "", email: "",
             phone: "", country: "", state: "", city: "",
             address: "", gender: "", marital_status: "",
-            bvn: "", language: "", role: "" });
+            bvn: "", language: "", role: "",bank_name: "", beneficiary: "",
+            acc_number: "", nin_number: "", dob: "" });
   
 
         } catch (error) {
@@ -208,7 +209,6 @@ const Datas = () => {
             });
         }
     };
-
     // delete
 
     const handleDelete = async (id) => {
