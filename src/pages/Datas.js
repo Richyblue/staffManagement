@@ -524,8 +524,7 @@ const Datas = () => {
             );
             setSubmissionStatus({ success: true, message: response.data.message });
             localStorage.removeItem("formData");
-            setFormData({parent_email: "",
-            parent_address: "", parent_name: "", parent_number: "",
+            setFormData({parent_email: "", parent_address: "", parent_name: "", parent_number: "",
              extended_address: "", extended_email: "", extended_name: "",
             extended_number: "", friend_address: "", friend_email: "",
             friend_number: "", friend_name: ""});
