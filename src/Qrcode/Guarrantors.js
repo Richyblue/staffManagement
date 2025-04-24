@@ -46,7 +46,7 @@ const Guarrantors = () => {
 
         try {
             const response = await axios.put(
-                `${BASE_URL}api/v1/staff/others/${staffId}`,
+                `${BASE_URL}api/v1/staff/gurantor/${staffId}`,
                 formData,
                 {
                     headers: {
