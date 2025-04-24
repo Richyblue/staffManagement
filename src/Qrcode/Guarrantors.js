@@ -65,9 +65,44 @@ useEffect(() => {
 
 
     // submmit others form 
-   const handleSubmitUpdateOther = async (event) => {
+//    const handleSubmitUpdateOther = async (event) => {
+//     event.preventDefault();
+//     const token = localStorage.getItem("token");
+
+//     try {
+//         const response = await axios.post(
+//             `${BASE_URL}api/v1/staff/gurantor/${staffId}`,
+//             formData,
+//             {
+//                 headers: {
+//                     "Content-Type": "application/json",
+//                     Authorization: `Bearer ${token}`,
+//                 },
+//             }
+//         );
+
+//         window.Swal.fire({
+//             icon: 'success',
+//             title: 'Success',
+//             text: response.data.message,
+//             confirmButtonColor: '#3085d6',
+//         });
+
+//         setFormData({ /* reset your form here */ });
+//         localStorage.removeItem("staffGuarrantors");
+
+//     } catch (error) {
+//         window.Swal.fire({
+//             icon: 'error',
+//             title: 'Oops...',
+//             text: error.response?.data?.message || "Failed to submit the form.",
+//             confirmButtonColor: '#d33',
+//         });
+//     }
+// };
+
+    const handleSubmitUpdateOther = async (event) => {
     event.preventDefault();
-    const token = localStorage.getItem("token");
 
     try {
         const response = await axios.post(
@@ -81,25 +116,31 @@ useEffect(() => {
             }
         );
 
-        window.Swal.fire({
-            icon: 'success',
-            title: 'Success',
-            text: response.data.message,
-            confirmButtonColor: '#3085d6',
-        });
-
-        setFormData({ /* reset your form here */ });
+        const newCount = guarantorCount + 1;
+        setGuarantorCount(newCount);
+        setFormData({ ...formData }); // Optional: clear fields if you want
         localStorage.removeItem("staffGuarrantors");
 
+        if (newCount < 3) {
+            setSubmissionStatus({
+                success: true,
+                message: `${3 - newCount} more guarantor${3 - newCount > 1 ? "s" : ""} remaining.`,
+            });
+        } else {
+            setSubmissionStatus({
+                success: true,
+                message: `All 3 guarantors successfully submitted.`,
+            });
+        }
+
     } catch (error) {
-        window.Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: error.response?.data?.message || "Failed to submit the form.",
-            confirmButtonColor: '#d33',
+        setSubmissionStatus({
+            success: false,
+            message: error.response?.data?.message || "Failed to submit the form.",
         });
     }
 };
+
 
 
         return (
