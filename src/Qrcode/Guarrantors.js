@@ -336,7 +336,9 @@ useEffect(() => {
                                 type="submit"
                                 className="bg-blue-600 text-white hover:bg-blue-700 text-lg font-semibold p-3 w-40"
                             >
-                                <FontAwesomeIcon icon={faPlusCircle} /> Add Another Guarantor
+                                // <FontAwesomeIcon icon={faPlusCircle} /> Add Another Guarantor
+
+                                    <FontAwesomeIcon icon={faPlusCircle} /> {guarantorCount >= 2 ? "Finish" : "Add Another Guarantor"}
                             </button>
                         </form>
                        
