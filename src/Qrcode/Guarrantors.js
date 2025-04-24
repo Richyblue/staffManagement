@@ -60,6 +60,7 @@ useEffect(() => {
     // submmit others form 
    const handleSubmitUpdateOther = async (event) => {
     event.preventDefault();
+    const token = localStorage.getItem("token");
 
     try {
         const response = await axios.post(
@@ -73,30 +74,26 @@ useEffect(() => {
             }
         );
 
-        const newCount = guarantorCount + 1;
-        setGuarantorCount(newCount);
-        setFormData({ ...formData }); // Optional: clear fields if you want
+        window.Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: response.data.message,
+            confirmButtonColor: '#3085d6',
+        });
+
+        setFormData({ /* reset your form here */ });
         localStorage.removeItem("staffGuarrantors");
 
-        if (newCount < 3) {
-            setSubmissionStatus({
-                success: true,
-                message: `${3 - newCount} more guarantor${3 - newCount > 1 ? "s" : ""} remaining.`,
-            });
-        } else {
-            setSubmissionStatus({
-                success: true,
-                message: `All 3 guarantors successfully submitted.`,
-            });
-        }
-
     } catch (error) {
-        setSubmissionStatus({
-            success: false,
-            message: error.response?.data?.message || "Failed to submit the form.",
+        window.Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: error.response?.data?.message || "Failed to submit the form.",
+            confirmButtonColor: '#d33',
         });
     }
 };
+
 
         return (
             <div>
