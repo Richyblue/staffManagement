@@ -26,6 +26,7 @@ import Staffcongrate from './Qrcode/Staffcongrate';
 import CheckEmail from './Qrcode/Startform';
 import Editexpenses from './pages/Editexpenses';
 import Editinventry from './pages/Editinventry';
+import Guarrantors from './Qrcode/Guarrantors';
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
       <Route path='/start' element={<CheckEmail />}/>
       <Route path='/editexpenses/:id' element={<ProtectedRoute><Editexpenses /></ProtectedRoute>}/>
       <Route path='/editinventory/:id' element={<ProtectedRoute><Editinventry /></ProtectedRoute>}/>
+      <Route path='/gurantors/:id' element={<Guarrantors />}/>
       </Routes>
     </div>
     </Router>
