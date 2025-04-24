@@ -193,7 +193,7 @@ const Guarrantors = () => {
                                         placeholder="Example 5 years "
                                         className="block w-full border border-gray-300 p-2"
                                         value={formData.year_of_relationship}
-                                        onChange={(e) => handleInputChange("year_of_relatinship", e.target.value)}
+                                        onChange={(e) => handleInputChange("year_of_relationship", e.target.value)}
                                         required
                                     />
                                 </div>
