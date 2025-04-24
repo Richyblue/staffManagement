@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link, useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle, faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 
 const Nextstaff = () => {
@@ -64,6 +65,7 @@ const Nextstaff = () => {
             );
             setSubmissionStatus({ success: true, message: response.data.message });
             localStorage.removeItem("formData");
+            navigate(`/gurantors/${staffId}`);
            
         } catch (error) {
             setSubmissionStatus({
