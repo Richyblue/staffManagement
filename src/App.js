@@ -56,7 +56,7 @@ function App() {
       <Route path='/start' element={<CheckEmail />}/>
       <Route path='/editexpenses/:id' element={<ProtectedRoute><Editexpenses /></ProtectedRoute>}/>
       <Route path='/editinventory/:id' element={<ProtectedRoute><Editinventry /></ProtectedRoute>}/>
-      <Route path='/gurantors/:id' element={<Guarrantors />}/>
+      <Route path='/gurantors/:staffId' element={<Guarrantors />}/>
       </Routes>
     </div>
     </Router>
