@@ -1000,7 +1000,7 @@ const Datas = () => {
                                         className="block w-full border border-gray-300 p-2"
                                         value={formData.first_name}
                                         onChange={(e) => handleInputChange("first_name", e.target.value)}
-                                        required
+                                        
                                     />
                                 </div>
 
@@ -1013,7 +1013,7 @@ const Datas = () => {
                                         className="block w-full border border-gray-300 p-2"
                                         value={formData.last_name}
                                         onChange={(e) => handleInputChange("last_name", e.target.value)}
-                                        required
+                                        
                                     />
                                 </div>
 
@@ -1029,7 +1029,7 @@ const Datas = () => {
                                         className="block w-full border border-gray-300 p-2"
                                         value={formData.email}
                                         onChange={(e) => handleInputChange("email", e.target.value)}
-                                        required
+                                        
                                     />
                                 </div>
                                 <div>
@@ -1041,7 +1041,7 @@ const Datas = () => {
                                         className="block w-full border border-gray-300 p-2"
                                         value={formData.phone}
                                         onChange={(e) => handleInputChange("phone", e.target.value)}
-                                        required
+                                        
                                     />
                                 </div>
 
@@ -1054,7 +1054,7 @@ const Datas = () => {
                                         className="block w-full border border-gray-300 p-2"
                                         value={formData.country}
                                         onChange={(e) => handleInputChange("country", e.target.value)}
-                                        required
+                                        
                                     />
                                 </div>
 
@@ -1067,7 +1067,7 @@ const Datas = () => {
                                         className="block w-full border border-gray-300 p-2"
                                         value={formData.state}
                                         onChange={(e) => handleInputChange("state", e.target.value)}
-                                        required
+                                        
                                     />
                                 </div>
 
@@ -1080,7 +1080,7 @@ const Datas = () => {
                                         className="block w-full border border-gray-300 p-2"
                                         value={formData.city}
                                         onChange={(e) => handleInputChange("city", e.target.value)}
-                                        required
+                                        
                                     />
                                 </div>
 
@@ -1093,7 +1093,7 @@ const Datas = () => {
                                         className="block w-full border border-gray-300 p-2"
                                         value={formData.address}
                                         onChange={(e) => handleInputChange("address", e.target.value)}
-                                        required
+                                        
                                     />
                                 </div>
 
@@ -1104,7 +1104,7 @@ const Datas = () => {
                                         className="block w-full border border-gray-300 p-2"
                                         value={formData.gender}
                                         onChange={(e) => handleInputChange("gender", e.target.value)}
-                                        required>
+                                        >
 
                                         <option value="" key="">Select one option</option>
                                         <option value="Male" key="">Male</option>
@@ -1119,7 +1119,7 @@ const Datas = () => {
                                         className="block w-full border border-gray-300 p-2"
                                         value={formData.marital_status}
                                         onChange={(e) => handleInputChange("marital_status", e.target.value)}
-                                        required>
+                                        >
 
                                         <option value="" key="">Select one option</option>
                                         <option value="Married" key="">Married</option>
@@ -1138,7 +1138,7 @@ const Datas = () => {
                                         className="block w-full border border-gray-300 p-2"
                                         value={formData.dob}
                                         onChange={(e) => handleInputChange("dob", e.target.value)}
-                                        required
+                                        
                                     />
                                 </div>
 
@@ -1151,7 +1151,7 @@ const Datas = () => {
                                         className="block w-full border border-gray-300 p-2"
                                         value={formData.bvn}
                                         onChange={(e) => handleInputChange("bvn", e.target.value)}
-                                        required
+                                        
                                     />
                                 </div>
                                 <div>
@@ -1163,7 +1163,7 @@ const Datas = () => {
                                         className="block w-full border border-gray-300 p-2"
                                         value={formData.nin_number}
                                         onChange={(e) => handleInputChange("nin_number", e.target.value)}
-                                        required
+                                        
                                     />
                                 </div>
 
@@ -1175,7 +1175,7 @@ const Datas = () => {
                                         className="block w-full border border-gray-300 p-2"
                                         value={formData.language}
                                         onChange={(e) => handleInputChange("language", e.target.value)}
-                                        required>
+                                        >
 
                                         <option value="" key="">Select office location</option>
                                         <option value="Lekki" key="">Lekki</option>
@@ -1192,7 +1192,7 @@ const Datas = () => {
                                         className="block w-full border border-gray-300 p-2"
                                         value={formData.role}
                                         onChange={(e) => handleInputChange("role", e.target.value)}
-                                        required>
+                                        >
 
                                         <option value="" key="">Select one option</option>
                                         <option value="Admin" key="">Admin</option>
@@ -1220,7 +1220,7 @@ const Datas = () => {
                                         className="block w-full border border-gray-300 p-2"
                                         value={formData.bank_name}
                                         onChange={(e) => handleInputChange("bank_name", e.target.value)}
-                                        required
+                                        
                                     />
                                 </div>
                                 <div>
@@ -1232,7 +1232,7 @@ const Datas = () => {
                                         className="block w-full border border-gray-300 p-2"
                                         value={formData.beneficiary}
                                         onChange={(e) => handleInputChange("beneficiary", e.target.value)}
-                                        required
+                                        
                                     />
                                 </div>
 
@@ -1245,7 +1245,7 @@ const Datas = () => {
                                         className="block w-full border border-gray-300 p-2"
                                         value={formData.acc_number}
                                         onChange={(e) => handleInputChange("acc_number", e.target.value)}
-                                        required
+                                        
                                     />
                                 </div>
                                 <button onClick={() => toggleModal(false)}>burron</button>
