@@ -73,8 +73,8 @@ const Guarrantors = () => {
                             >
                                 <FontAwesomeIcon icon={faArrowCircleLeft} /> Back
                             </button>
-                <h3 className="text-2xl font-bold mb-4 text-center">Add Staff Family Menbers</h3>
-                <p className="">EMPLOYMENT GUARANTOR FORM PLEASE, DO NOT GUARANTEE SOMEONE NOT WELL KNOWN 
+               
+                <p className="text-center bg-yellow-300 p-2">EMPLOYMENT GUARANTOR FORM PLEASE, DO NOT GUARANTEE SOMEONE NOT WELL KNOWN 
                     TO YOU FOR A MINIMUM OF 3 YEARS!
                 </p>
                 <h3 className="text-2xl font-bold mb-4 text-center">Add Staff Guarantor Data</h3>
