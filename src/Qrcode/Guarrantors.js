@@ -37,34 +37,67 @@ const Guarrantors = () => {
         }));
     };
 
+const [guarantorCount, setGuarantorCount] = useState(0);
+
+useEffect(() => {
+    const fetchGuarantors = async () => {
+        try {
+            const response = await axios.get(`${BASE_URL}api/v1/staff/gurantor/staff/${staffId}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            setGuarantorCount(response.data.length); // Assuming response.data is an array of guarantors
+        } catch (error) {
+            console.error("Error fetching guarantors:", error);
+        }
+    };
+
+    fetchGuarantors();
+}, [staffId]);
 
 
     // submmit others form 
-    const handleSubmitUpdateOther = async (event) => {
-        event.preventDefault();
-        const token = localStorage.getItem("token");
+   const handleSubmitUpdateOther = async (event) => {
+    event.preventDefault();
 
-        try {
-            const response = await axios.post(
-                `${BASE_URL}api/v1/staff/gurantor/${staffId}`,
-                formData,
-                {
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${token}`,
-                    },
-                }
-            );
-            setSubmissionStatus({ success: true, message: response.data.message });
-            localStorage.removeItem("formData");
-           
-        } catch (error) {
+    try {
+        const response = await axios.post(
+            `${BASE_URL}api/v1/staff/gurantor/${staffId}`,
+            formData,
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                },
+            }
+        );
+
+        const newCount = guarantorCount + 1;
+        setGuarantorCount(newCount);
+        setFormData({ ...formData }); // Optional: clear fields if you want
+        localStorage.removeItem("staffGuarrantors");
+
+        if (newCount < 3) {
             setSubmissionStatus({
-                success: false,
-                message: error.response?.data?.message || "Failed to submit the form.",
+                success: true,
+                message: `${3 - newCount} more guarantor${3 - newCount > 1 ? "s" : ""} remaining.`,
+            });
+        } else {
+            setSubmissionStatus({
+                success: true,
+                message: `All 3 guarantors successfully submitted.`,
             });
         }
-    };
+
+    } catch (error) {
+        setSubmissionStatus({
+            success: false,
+            message: error.response?.data?.message || "Failed to submit the form.",
+        });
+    }
+};
+
         return (
             <div>
                 <div className="max-w-4xl mx-auto items-center mt-6 mb-6 shadow-lg p-7">
@@ -258,7 +291,7 @@ const Guarrantors = () => {
                                 type="submit"
                                 className="bg-blue-600 text-white hover:bg-blue-700 text-lg font-semibold p-3 w-40"
                             >
-                                <FontAwesomeIcon icon={faPlusCircle} /> Add
+                                <FontAwesomeIcon icon={faPlusCircle} /> Add Another Guarantor
                             </button>
                         </form>
                        
