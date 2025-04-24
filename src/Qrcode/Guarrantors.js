@@ -56,6 +56,13 @@ useEffect(() => {
     fetchGuarantors();
 }, [staffId]);
 
+    useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/sweetalert2@11";
+    script.async = true;
+    document.body.appendChild(script);
+}, []);
+
 
     // submmit others form 
    const handleSubmitUpdateOther = async (event) => {
