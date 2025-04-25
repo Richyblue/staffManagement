@@ -47,33 +47,40 @@ const Nextstaff = () => {
 
 
 
-    // submmit others form 
-    const handleSubmitUpdateOther = async (event) => {
-        event.preventDefault();
-        
+    // Submit "others" form without token
+const handleSubmitUpdateOther = async (event) => {
+    event.preventDefault();
 
-        try {
-            const response = await axios.put(
-                `${BASE_URL}api/v1/staff/others/${staffId}`,
-                formData,
-                {
-                    headers: {
-                        "Content-Type": "application/json",
-                        
-                    },
-                }
-            );
-            setSubmissionStatus({ success: true, message: response.data.message });
-            localStorage.removeItem("formData");
-            navigate(`/gurantors/${staffId}`);
-           
-        } catch (error) {
-            setSubmissionStatus({
-                success: false,
-                message: error.response?.data?.message || "Failed to submit the form.",
-            });
-        }
-    };
+    try {
+        const response = await axios.put(
+            `${BASE_URL}api/v1/staff/othersqr/${staffId}`,
+            formData,
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            }
+        );
+
+        // Handle successful update
+        setSubmissionStatus({
+            success: true,
+            message: response.data.message,
+        });
+
+        // Clear stored form data and navigate to next step
+        localStorage.removeItem("formData");
+        navigate(`/gurantors/${staffId}`);
+    } catch (error) {
+        // Handle errors gracefully
+        console.error("Failed to submit 'others' form:", error);
+        setSubmissionStatus({
+            success: false,
+            message: error.response?.data?.message || "Failed to submit the form.",
+        });
+    }
+};
+
         return (
             <div>
                 <div className="max-w-4xl mx-auto items-center mt-6 mb-6 shadow-lg p-7">
