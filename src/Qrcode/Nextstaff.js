@@ -10,7 +10,7 @@ const Nextstaff = () => {
     const BASE_URL = process.env.REACT_APP_BASE_URL;
     const {staffId}=useParams();
     const [submissionStatus, setSubmissionStatus] = useState(null);
-   
+   const navigate = useNavigate();
     const token = localStorage.getItem("token");
     const [formData, setFormData] = useState(() => {
         const savedData = localStorage.getItem("staffForm");
