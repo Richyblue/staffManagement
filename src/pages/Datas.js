@@ -53,10 +53,12 @@ const Datas = () => {
     const [isStatusModalOpense, setIsStatusModalOpense] = useState(false);
     const [isLeaveModalOpen, setIsLeaveModalOpen] = useState(false);
     const [isBankModalOpen, setIsBankModalOpen] = useState(false);
+    const [isGModalOpen, setIsGModalOpen] = useState(false);
     const [isPersonalModalOpen, setIsPersonalModalOpen] = useState(false);
     const [isParentModalOpen, setIsParentModalOpen] = useState(false);
     const [receiverId, setReceiverId] = useState(null);
     const [bankId, setBankId] = useState(null);
+    const [guarantorId , setGuarantorId] = useState(null);
     const [statusId, setStatusId] = useState(null);
     const [keyword, setKeyword] = useState([]);
     const [putBank, setPutBank] = useState(null);
@@ -152,6 +154,12 @@ const Datas = () => {
     const toggleBankModal = (id) => {
         setBankId(id);
         setIsBankModalOpen(!isBankModalOpen);
+        setSubmissionStatus(null); // Clear status on modal open
+    };
+
+     const toggleGuarantorModal = (id) => {
+        setGuarantorId(id);
+        setIsGModalOpen(!isBankModalOpen);
         setSubmissionStatus(null); // Clear status on modal open
     };
 
@@ -670,6 +678,9 @@ const Datas = () => {
                                                             </Menu.Item>
                                                             <Menu.Item onClick={() => toggleModal(staffs.id)} as="button" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">
                                                                 View
+                                                            </Menu.Item>
+                                                            <Menu.Item onClick={() => toggleGModal(staffs.id)} as="button" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">
+                                                                View Guarantor
                                                             </Menu.Item>
                                                             <Menu.Item onClick={() => toggleBankModal(staffs.id)} as="button" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">
                                                                 Add Family
@@ -1962,6 +1973,23 @@ const Datas = () => {
                 </div>
             )}
 
+                 {toggleGModal && (
+                <div className="fixed inset-0 bg-gray-800 bg-opacity-75 fle items-end overflow-y-auto justify-end z-50">
+                    <div className="bg-white shadow-lg p-6 w-full max-w-4xl">
+                        <button className=" bg-red-800 text-white w-10 p-1" onClick={toggleModalse}><FontAwesomeIcon icon={faTimes} /></button>
+                        <h3 className="text-2xl font-bold mb-4 text-center">View Gurantor</h3>
+
+                
+                     
+                                                <button
+                            onClick={toggleModalse}
+                            className="mt-4 w-full bg-gray-300 text-gray-700 p-2 rounded hover:bg-gray-400 transition"
+                        >
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            )}
 
 
 
