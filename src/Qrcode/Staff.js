@@ -45,40 +45,38 @@ const Staff = () => {
 
 
 
-    // submmit form 
     const handleSubmit = async (event) => {
-        event.preventDefault();
-        const token = localStorage.getItem("token");
+    event.preventDefault();
 
-        try {
-            const response = await axios.post(
-                `${BASE_URL}api/v1/staff`,
-                formData,
-                {
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${token}`,
-                    },
+    try {
+        const response = await axios.post(
+            `${BASE_URL}api/v1/staff`,
+            formData,
+            {
+                headers: {
+                    "Content-Type": "application/json"
                 }
-            );
+            }
+        );
 
-            // Extract the Gigs ID from the response
-    const staffId = response.data?.allStaff?.id; // Adjust based on your API response structure
+        // Extract the staff ID from the response
+        const staffId = response.data?.allStaff?.id;
 
-    if (!staffId) {
-      throw new Error("Staff ID not found in the response.");
-    }
-            setSubmissionStatus({ success: true, message: response.data.message });
-            localStorage.removeItem("formData");
-            navigate(`/staff-form-next/${staffId}`);
-
-        } catch (error) {
-            setSubmissionStatus({
-                success: false,
-                message: error.response?.data?.message || "Failed to submit the form.",
-            });
+        if (!staffId) {
+            throw new Error("Staff ID not found in the response.");
         }
-    };
+
+        setSubmissionStatus({ success: true, message: response.data.message });
+        localStorage.removeItem("formData");
+        navigate(`/staff-form-next/${staffId}`);
+
+    } catch (error) {
+        setSubmissionStatus({
+            success: false,
+            message: error.response?.data?.message || "Failed to submit the form.",
+        });
+    }
+};
 
         return (
             <div>
