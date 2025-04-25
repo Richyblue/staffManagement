@@ -53,7 +53,7 @@ const handleSubmitUpdateOther = async (event) => {
 
     try {
         const response = await axios.put(
-            `${BASE_URL}api/v1/staff/othersqr/${staffId}`,
+            `${BASE_URL}api/v1/staff/others/${staffId}`,
             formData,
             {
                 headers: {
