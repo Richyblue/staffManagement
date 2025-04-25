@@ -50,7 +50,7 @@ const Staff = () => {
 
     try {
         const response = await axios.post(
-            `${BASE_URL}api/v1/staff`,
+            `${BASE_URL}api/v1/staffqr`,
             formData,
             {
                 headers: {
