@@ -50,7 +50,7 @@ const Nextstaff = () => {
     // submmit others form 
     const handleSubmitUpdateOther = async (event) => {
         event.preventDefault();
-        const token = localStorage.getItem("token");
+        
 
         try {
             const response = await axios.put(
@@ -59,7 +59,7 @@ const Nextstaff = () => {
                 {
                     headers: {
                         "Content-Type": "application/json",
-                        Authorization: `Bearer ${token}`,
+                        
                     },
                 }
             );
