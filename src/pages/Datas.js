@@ -1944,7 +1944,7 @@ const Datas = () => {
                                         <option value="1" key="">Active</option>
                                         <option value="2" key="">Pending</option>
                                         <option value="3" key="">Suspended</option>
-                                        <option value="4" key="">On Leave</option>
+                                        <option value="4" key="">Leave</option>
                                         <option value="5" key="">Terminated</option>
 
                                     </select>
