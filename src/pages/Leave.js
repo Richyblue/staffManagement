@@ -55,7 +55,9 @@ const Leave = () => {
             
         };
     });
-
+const formatDate = (timestamp)=>{
+    return moment(timestamp). format("MMMM DD, YYYY hh:mm A");
+};
     useEffect(() => {
         localStorage.setItem("leaveInfo", JSON.stringify(formData));
     }, [formData]);
@@ -322,7 +324,8 @@ const Leave = () => {
                                     <th className="border px-4 py-2 text-left">Name</th>
                                     <th className="border px-4 py-2 text-left">Duration</th>
                                     <th className="border px-4 py-2 text-left">Reason</th>
-                                    <th className="border px-4 py-2 text-left">Status</th>
+                                    <th className="border px-4 py-2 text-left">Date</th>
+                                <th className="border px-4 py-2 text-left">Status</th>
                                     <th className="border px-4 py-2 text-left">Action</th>
                                 </tr>
                             </thead>
@@ -340,6 +343,7 @@ const Leave = () => {
                                         </td>
                                         <td className="border px-4 py-2">{leave.leave_duration}</td>
                                         <td className="border px-4 py-2">{leave.leave_reason}</td>
+                                        <td className="border px-4 py-2">{formatDate(leave.createdAt || leave.updatedAt)}</td>
                                         <td className="border px-4 py-2">{leave.on_leave === 1 ? (
                                             <button className="bg-blue-800 p-1 font-semibold text-white w-24">On Leave</button>
                                         ) : (
