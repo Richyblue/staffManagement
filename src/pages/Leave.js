@@ -343,7 +343,7 @@ const formatDate = (timestamp)=>{
                                         </td>
                                         <td className="border px-4 py-2">{leave.leave_duration}</td>
                                         <td className="border px-4 py-2">{leave.leave_reason}</td>
-                                        <td className="border px-4 py-2">{formatDate(leave.createdAt || leave.updatedAt)}</td>
+                                        <td className="border px-4 py-2">{formatDate(leave.createdAt)}</td>
                                         <td className="border px-4 py-2">{leave.on_leave === 1 ? (
                                             <button className="bg-blue-800 p-1 font-semibold text-white w-24">On Leave</button>
                                         ) : (
