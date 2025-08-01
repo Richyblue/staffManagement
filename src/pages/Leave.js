@@ -324,7 +324,7 @@ const formatDate = (timestamp)=>{
                                     <th className="border px-4 py-2 text-left">Name</th>
                                     <th className="border px-4 py-2 text-left">Duration</th>
                                     <th className="border px-4 py-2 text-left">Reason</th>
-                                    <th className="border px-4 py-2 text-left">Date</th>
+                                    <th className="border px-4 py-2 text-left">Date/Time</th>
                                 <th className="border px-4 py-2 text-left">Status</th>
                                     <th className="border px-4 py-2 text-left">Action</th>
                                 </tr>
