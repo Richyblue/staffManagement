@@ -55,9 +55,9 @@ const Leave = () => {
             
         };
     });
-// const formatDate = (timestamp)=>{
-//         return moment(timestamp).format("MMMM DD, YYYY hh:mm A");
-//     };
+const formatDate = (timestamp)=>{
+        return moment(timestamp).format("MMMM DD, YYYY hh:mm A");
+    };
     useEffect(() => {
         localStorage.setItem("leaveInfo", JSON.stringify(formData));
     }, [formData]);
