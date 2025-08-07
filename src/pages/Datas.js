@@ -594,11 +594,6 @@ const Datas = () => {
     const currentRecords = filteredStaffs.slice(indexOfFirstRecord, indexOfLastRecord);
     const totalPages = Math.ceil(filteredStaffs.length / recordsPerPage);
 
-
-
-
-
-
     const formatDate = (timestamp) => {
         return moment(timestamp).format("MMMM DD, YYYY hh:mm A");
     };
