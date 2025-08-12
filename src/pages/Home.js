@@ -1,12 +1,41 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from "react";
 import Adminsidebar from '../components/Adminsidebar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons/faUserFriends';
 import { faRefresh } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-class Home extends Component {
-    render() {
+function Home() {
+    const [totalStaff, setTotalStaff] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+    useEffect(() => {
+    const token = localStorage.getItem("token"); // get token from localStorage
+
+    fetch(`${BASE_URL}api/v1/staffcount`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`, // attach token
+      },
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to fetch staff count");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setTotalStaff(data.total); // matches { total: totalCount }
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+
         return (
             <div>
                 <div className="flex h-screen ">
@@ -31,7 +60,7 @@ class Home extends Component {
                         <button
                             className="mt-4 w-full bg-blue-200 text-gray-700 p-2 shadow-lg rounded hover:bg-gray-400 transition"
                         >
-                            <h2 className="font-bold sm:text-lg p-3">7</h2>
+                            <h2 className="font-bold sm:text-lg p-3">{totalStaff}</h2>
                            <FontAwesomeIcon icon={faUserFriends}/> Total Staff
                         </button>
                         </Link>
