@@ -677,7 +677,7 @@ const Datas = () => {
                                                             </Menu.Item>
                                                             <Menu.Items className="absolute right-0 mt-2 w-40 bg-white shadow-lg border rounded-md">
                                                     <Link to={`/gurantors/${staffs.id}`}>
-    </Menu.Item>
+    </Menu.Items>
                                                             <Menu.Item onClick={() => toggleBankModal(staffs.id)} as="button" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">
                                                                 Add Family
                                                             </Menu.Item>
