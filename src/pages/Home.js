@@ -10,6 +10,7 @@ function Home() {
     const BASE_URL = process.env.REACT_APP_BASE_URL;
 const [totalStaff, setTotalStaff] = useState(null);
     const [totalSuspended, setTotalSuspended] = useState(null);
+     const [totalLeave, setTotalLeave] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -52,6 +53,24 @@ const [totalStaff, setTotalStaff] = useState(null);
       });
   }, []);
 
+    useEffect(() => {
+    const token = localStorage.getItem("token"); // get token from localStorage
+
+    axios
+      .get(`${BASE_URL}api/v1/Leavecount`, {
+        headers: {
+          Authorization: `Bearer ${token}`, // attach token
+        },
+      })
+      .then((res) => {
+        setTotalLeave(res.data.leaveCount); // matches { total: totalCount }
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.response?.data?.message || err.message);
+        setLoading(false);
+      });
+  }, []);
 
         return (
             <div>
@@ -91,7 +110,7 @@ const [totalStaff, setTotalStaff] = useState(null);
                         <button
                             className="mt-4 w-full bg-red-200 text-gray-700 shadow-lg p-2 rounded hover:bg-gray-400 transition"
                         >
-                           <h2 className="font-bold sm:text-lg p-3">0</h2>
+                           <h2 className="font-bold sm:text-lg p-3">{totalLeave}</h2>
                            <FontAwesomeIcon icon={faRefresh}/>  Staff on Leave
                         </button>
                         </Link>
