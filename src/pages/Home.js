@@ -4,34 +4,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons/faUserFriends';
 import { faRefresh } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import axios from "axios";
 
 function Home() {
     const [totalStaff, setTotalStaff] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
+
     useEffect(() => {
     const token = localStorage.getItem("token"); // get token from localStorage
 
-    fetch(`${BASE_URL}api/v1/staffcount`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`, // attach token
-      },
-    })
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Failed to fetch staff count");
-        }
-        return res.json();
+    axios
+      .get(`${BASE_URL}api/v1/staffcount`, {
+        headers: {
+          Authorization: `Bearer ${token}`, // attach token
+        },
       })
-      .then((data) => {
-        setTotalStaff(data.total); // matches { total: totalCount }
+      .then((res) => {
+        setTotalStaff(res.data.total); // matches { total: totalCount }
         setLoading(false);
       })
       .catch((err) => {
-        setError(err.message);
+        setError(err.response?.data?.message || err.message);
         setLoading(false);
       });
   }, []);
