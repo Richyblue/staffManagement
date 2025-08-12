@@ -8,6 +8,9 @@ import { faFilePdf, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { Menu } from "@headlessui/react"; // Example dropdown library
 
 const Files = () => {
+     const formatDate = (timestamp) => {
+    return moment(timestamp).format("MMMM DD, YYYY hh:mm A");
+  };
     const BASE_URL = process.env.REACT_APP_BASE_URL;
     const { id } = useParams();
     const [submissionStatus, setSubmissionStatus] = useState(null);
@@ -245,6 +248,7 @@ const Files = () => {
                                     <th className="border px-4 py-2 text-left">Staff Name</th>
                                     <th className="border px-4 py-2 text-left">Documents</th>
                                     <th className="border px-4 py-2 text-left">Doc Name</th>
+                                    <th className="border px-4 py-2 text-left">Date/Time</th>
                                     <th className="border px-4 py-2 text-left">Action</th>
                                 </tr>
                             </thead>
@@ -262,6 +266,7 @@ const Files = () => {
                                         </td>
                                         <td className="border px-4 py-2"><a href={ `${BASE_URL}${leave.files} `} target="_blank" rel="noopener noreferrer" className="text-red-600 text-3xl"><FontAwesomeIcon icon={faFilePdf}/></a></td>
                                         <td className="border px-4 py-2">{leave.file_name}</td>
+                                        <td className="border px-4 py-2">{formatDate(leave.createdAt)}</td>
                                        
                                         <td className="border px-4 py-2">
                                             <div className="relative inline-block text-left">
