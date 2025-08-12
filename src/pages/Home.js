@@ -96,21 +96,21 @@ const [totalStaff, setTotalStaff] = useState(null);
                         <button
                             className="mt-4 w-full bg-blue-200 text-gray-700 p-2 shadow-lg rounded hover:bg-gray-400 transition"
                         >
-                            <h2 className="font-bold sm:text-lg p-3">{totalStaff}</h2>
+                            <h2 className="font-bold sm:text-lg p-3">{totalStaff ?? 0}</h2>
                            <FontAwesomeIcon icon={faUserFriends}/> Total Staff
                         </button>
                         </Link>
                         <button
                             className="mt-4 w-full bg-yellow-200 text-gray-700 shadow-lg p-2 rounded hover:bg-gray-400 transition"
                         >
-                            <h2 className="font-bold sm:text-lg p-3">{totalSuspended}</h2>
+                            <h2 className="font-bold sm:text-lg p-3">{totalSuspended ?? 0}</h2>
                             <FontAwesomeIcon icon={faRefresh}/>  Suspended Staff
                         </button>
                         <Link to='/leave'>
                         <button
                             className="mt-4 w-full bg-red-200 text-gray-700 shadow-lg p-2 rounded hover:bg-gray-400 transition"
                         >
-                           <h2 className="font-bold sm:text-lg p-3">{totalLeave}</h2>
+                           <h2 className="font-bold sm:text-lg p-3">{totalLeave ?? 0}</h2>
                            <FontAwesomeIcon icon={faRefresh}/>  Staff on Leave
                         </button>
                         </Link>
