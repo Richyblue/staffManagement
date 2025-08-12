@@ -377,7 +377,7 @@ const Leave = () => {
 
 
 
-                                                    </Menu.Items>
+                                                     </Menu.Items>
                                                 </Menu>
                                             </div>
                                         </td>
