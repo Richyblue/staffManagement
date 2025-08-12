@@ -178,6 +178,10 @@ const [totalStaff, setTotalStaff] = useState(null);
                     </div>
                                 
                 </div>
+                                <div>
+      <canvas ref={barRef} style={{ maxWidth: "500px", margin: "20px" }}></canvas>
+      <canvas ref={pieRef} style={{ maxWidth: "500px", margin: "20px" }}></canvas>
+    </div>
             </div>
         );
     
