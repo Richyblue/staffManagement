@@ -1965,23 +1965,7 @@ const Datas = () => {
                 </div>
             )}
 
-                 {toggleGModal && (
-                <div className="fixed inset-0 bg-gray-800 bg-opacity-75 fle items-end overflow-y-auto justify-end z-50">
-                    <div className="bg-white shadow-lg p-6 w-full max-w-4xl">
-                        <button className=" bg-red-800 text-white w-10 p-1" onClick={toggleModalse}><FontAwesomeIcon icon={faTimes} /></button>
-                        <h3 className="text-2xl font-bold mb-4 text-center">View Gurantor</h3>
-
                 
-                     
-                                                <button
-                            onClick={toggleModalse}
-                            className="mt-4 w-full bg-gray-300 text-gray-700 p-2 rounded hover:bg-gray-400 transition"
-                        >
-                            Cancel
-                        </button>
-                    </div>
-                </div>
-            )}
 
 
 
