@@ -31,9 +31,6 @@ import Navmenu from '../components/Navmenu';
 import moment from "moment";
 import { Link } from 'react-router-dom';
 
-
-
-
 const Datas = () => {
     const formatDate = (timestamp) => {
         return moment(timestamp).format("MMMM DD, YYYY hh:mm A");
@@ -597,7 +594,6 @@ const Datas = () => {
     const currentRecords = filteredStaffs.slice(indexOfFirstRecord, indexOfLastRecord);
     const totalPages = Math.ceil(filteredStaffs.length / recordsPerPage);
 
-    
     return (
         <div>
             <div className="flex h-screen bg-gray-100">
