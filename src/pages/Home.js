@@ -91,7 +91,7 @@ const [totalStaff, setTotalStaff] = useState(null);
                         <button
                             className="mt-4 w-full bg-red-200 text-gray-700 shadow-lg p-2 rounded hover:bg-gray-400 transition"
                         >
-                           <h2 className="font-bold sm:text-lg p-3">56</h2>
+                           <h2 className="font-bold sm:text-lg p-3">0</h2>
                            <FontAwesomeIcon icon={faRefresh}/>  Staff on Leave
                         </button>
                         </Link>
