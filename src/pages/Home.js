@@ -24,21 +24,21 @@ class Home extends Component {
                         <button
                             className="mt-4 w-full bg-gray-300 text-gray-700 p-2 shadow-lg rounded hover:bg-gray-400 transition"
                         >
-                           <h2 className="font-bold sm:text-lg p-3">45</h2>
+                           <h2 className="font-bold sm:text-lg p-3">0</h2>
                            <FontAwesomeIcon icon={faRefresh}/>  Terminated Staff
                         </button>
                         <Link to='/alldata'>
                         <button
                             className="mt-4 w-full bg-blue-200 text-gray-700 p-2 shadow-lg rounded hover:bg-gray-400 transition"
                         >
-                            <h2 className="font-bold sm:text-lg p-3">89</h2>
+                            <h2 className="font-bold sm:text-lg p-3">7</h2>
                            <FontAwesomeIcon icon={faUserFriends}/> Total Staff
                         </button>
                         </Link>
                         <button
                             className="mt-4 w-full bg-yellow-200 text-gray-700 shadow-lg p-2 rounded hover:bg-gray-400 transition"
                         >
-                            <h2 className="font-bold sm:text-lg p-3">45</h2>
+                            <h2 className="font-bold sm:text-lg p-3">0</h2>
                             <FontAwesomeIcon icon={faRefresh}/>  Suspended Staff
                         </button>
                         <Link to='/leave'>
