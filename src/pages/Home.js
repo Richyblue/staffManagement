@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Adminsidebar from '../components/Adminsidebar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons/faUserFriends';
@@ -13,6 +13,8 @@ const [totalStaff, setTotalStaff] = useState(null);
      const [totalLeave, setTotalLeave] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+      const barRef = useRef(null);
+  const pieRef = useRef(null);
 
 
     useEffect(() => {
@@ -72,6 +74,64 @@ const [totalStaff, setTotalStaff] = useState(null);
       });
   }, []);
 
+
+    useEffect(() => {
+    axios.get(`${BASE_URL}api/v1/staffchart`)
+      .then((res) => {
+        const data = res.data;
+        if (!window.Chart) return; // Make sure Chart.js is loaded
+
+        // Destroy old charts if they exist (to prevent duplicates)
+        if (barRef.current.chart) barRef.current.chart.destroy();
+        if (pieRef.current.chart) pieRef.current.chart.destroy();
+
+        // Bar Chart - Staff by Department
+        barRef.current.chart = new window.Chart(barRef.current, {
+          type: "bar",
+          data: {
+            labels: data.byDepartment.map((d) => d.language),
+            datasets: [
+              {
+                label: "Staff Count",
+                data: data.byDepartment.map((d) => d.count),
+                backgroundColor: "#36a2eb",
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { display: false },
+              title: { display: true, text: "Staff by Department" },
+            },
+          },
+        });
+
+        // Pie Chart - Staff by Gender
+        pieRef.current.chart = new window.Chart(pieRef.current, {
+          type: "pie",
+          data: {
+            labels: data.byGender.map((g) => g.gender),
+            datasets: [
+              {
+                data: data.byGender.map((g) => g.count),
+                backgroundColor: ["#ff6384", "#36a2eb"],
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              title: { display: true, text: "Staff by Gender" },
+            },
+          },
+        });
+      })
+      .catch((err) => {
+        console.error("Failed to load staff stats:", err);
+      });
+  }, []);
+
         return (
             <div>
                 <div className="flex h-screen ">
@@ -116,6 +176,8 @@ const [totalStaff, setTotalStaff] = useState(null);
                         </Link>
                         </div>
                     </div>
+                                 <canvas ref={barRef} style={{ maxWidth: "500px", margin: "20px" }}></canvas>
+      <canvas ref={pieRef} style={{ maxWidth: "500px", margin: "20px" }}></canvas>
                 </div>
             </div>
         );
