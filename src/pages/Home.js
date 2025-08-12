@@ -43,7 +43,7 @@ function Home() {
                        
                         <div className="p-4">
                             <h1 className="text-2xl font-bold text-black">Welcome to my dashboard!</h1>
-                            <p className="mt-2 text-gray-700">This is an example dashboard using Tailwind CSS.</p>
+                            <p className="mt-2 text-gray-700">ThisStaff Management System Developed for Kays Place Barber Shop .</p>
                         </div>
                         <div className="grid lg:grid-cols-4 gap-4 p-3">
                         <button
